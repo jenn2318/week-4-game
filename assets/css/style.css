@@ -1,0 +1,88 @@
+body{
+	margin: 0;
+	padding: 0;
+	background-image: url('../../assets/images/congruent_pentagon.png');
+	background-size: cover;
+	box-sizing: border-box;
+}
+
+.header{
+ background-color: orchid;
+ border: 3px solid;
+ text-align: center;
+ width: 35%;
+ margin: 20 20 20 20;
+}
+
+#container{
+	/*border-style:dashed;*/
+	height: 100px;	
+}
+
+#rules{
+	background-color: #4aaaa5;
+	border-style: dashed;
+	width: 40%;
+	height: 400px;
+	margin-left: 20px
+
+}
+
+p{
+	font-size: 18px;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+}
+
+h3{
+	text-align: center;
+}
+
+#random1{
+ /*border-style:dashed;*/
+ background-color:#4aaaa5;
+}
+
+#scorekeeper{
+/*border-style:dashed;*/
+background-color: orchid;
+}
+
+.crystal{
+	display: flex;
+	justify-content: center;
+	background-color: gray;
+	border:1px solid black;
+	align-items: center;
+	margin: 10 10 10 10;
+	width: 100%;
+}
+
+.crystal1{
+	border: 4px solid orchid; 
+	height: 210px;
+	width: 238px;
+	float: left;
+	margin: 5px;
+}
+.crystal2{
+	border: 4px solid orchid; 
+	height: 193px;
+	width: 262px;
+	float: left;
+	margin: 5px;
+
+}
+.crystal3{
+	border: 4px solid orchid; 
+	height: 212px;
+	width: 238px;
+	float: left;
+	margin: 5px;
+}
+.crystal4{
+	border: 4px solid orchid; 
+	height: 190px;
+	width: 265px;
+	float: left;
+	margin: 5px;
