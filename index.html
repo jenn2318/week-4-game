@@ -5,7 +5,7 @@
 	<title>Crystal Collector</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<scrip src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
 </head>
      
 <body>
@@ -40,17 +40,35 @@
 <div id="adder" class="valueoadder">	
 </div>
  -->
-<div class="crystals"></div>
-	<div class="crystal1">
+
+<div class="flex-container"> 
+<div id="random-given">
+	<p>#</p>
+	</div>
+
+<div class="win-lose">
+	<h2>WIN:
+	<span id="win">0</span></h2>
+	<h2>Loss:
+	<span id="loss">0</span></h2>
+   </div>
+
+  <div class="total-score">
+    <h3>Your Total Score is:</h3>
+</div>
+</div>
+
+<div id="crystal-buttons">
+	<div type="button" class="crystal1" value = '1'>
 		<img src="assets/images/clear-crystal.jpg">
 	</div>
-	<div class="crystal2">
+	<div type="button" class="crystal2" value = '2'>
 		<img src="assets/images/purple-crystal.jpg">
 	</div>
-	<div class="crystal3">
+	<div type="button" class="crystal3">
 		<img src="assets/images/green-crystal.jpg">
 	</div>
-	<div class="crystal4">
+	<div type="button" class="crystal4">
 		<img src="assets/images/pink-crystal.jpg">
 	</div>
  </div>
@@ -58,11 +76,17 @@
 <!-- </div> -->
 
 
-<script type="text/javascript" src="assets/game.js"></script>
+<script type="text/javascript" src="assets/javascript/game.js"></script>
+
+<script>
+	$(function() {
+    
 
 
+    
 
 
+	});
 
 
 </body>
