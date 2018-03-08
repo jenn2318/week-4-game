@@ -62,7 +62,7 @@ h3{
 background-color: orchid;
 }
 
-#random-given{
+#random-number{
 	background-color: #4aaaa5;
 	border: 3px solid;
 	text-align: left;
@@ -81,7 +81,7 @@ background-color: orchid;
 	width: 100%;
 }
 
-.win-lose{
+.score-win-lose{
 	background-color: #4aaaa5;
 	border: 3px solid;
 	text-align: center;
