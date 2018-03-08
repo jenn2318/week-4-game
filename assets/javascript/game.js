@@ -24,6 +24,7 @@ function getRandomNumber(){
 	randomNumberBetween19and120 = Math.floor(Math.random() * (119 - 20) + 19);
 	console.log(randomNumberBetween19and120);
 	$("#randomNumber").html(randomNumberBetween19and120);
+	getRandomNumber();
 }
 //Calculates random numbers for the crystals
 function getCrystalRandomNumber(){
@@ -31,7 +32,8 @@ function getCrystalRandomNumber(){
 	crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
 	crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
 	crystal4  = Math.floor(Math.random() * (12 - 1) + 1);
-$("#crystalButtons").html(randomNumberBetween1and12)
+    $("#crystalButtons").html(randomNumberBetween1and12);
+    getCrystalRandomNumber();
 };
 //Adds score to crystals/Test Below:
 //=================================================================
