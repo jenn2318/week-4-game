@@ -5,7 +5,7 @@
 //If it does not equal to the score the game starts over
 //If it equals, then the win counter will increment
 //VARIABLES
-$(document).ready(function) {
+$( document ).ready(function()) {
 //===================================================================
 var randomNumber = 0
 var win = 0
