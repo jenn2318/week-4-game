@@ -37,7 +37,7 @@ function getCrystalRandomNumber(){
 };
 //Adds score to crystals/Test Below:
 //=================================================================
-$(".crystal1").on("click", function(){
+$(".crystal1").on("click", function calculateTotal(){
 	totalScore = totalScore + crystal1;
 	$('#total-score').html(totalScore);
     calculateTotal();
