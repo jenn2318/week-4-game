@@ -5,7 +5,7 @@
 //If it does not equal to the score the game starts over
 //If it equals, then the win counter will increment
 //VARIABLES
-$( document ).ready(function()) {
+$( document ).ready(function() {
 //===================================================================
 var randomNumber = 0
 var win = 0
@@ -22,6 +22,7 @@ var score = 0
 //Calculates a random number for the game
 function getRandomNumber(){
 	randomNumberBetween19and120 = Math.floor(Math.random() * (119 - 20) + 19);
+	console.log(randomNumberBetween19and120);
 	$("#randomNumber").html(randomNumberBetween19and120);
 }
 //Calculates random numbers for the crystals
@@ -32,36 +33,34 @@ function getCrystalRandomNumber(){
 	crystal4  = Math.floor(Math.random() * (12 - 1) + 1);
 $("#crystalButtons").html(randomNumberBetween1and12)
 };
-
-//Adds score to crystals
+//Adds score to crystals/Test Below:
 //=================================================================
-
 $(".crystal1").on("click", function(){
 	totalScore = totalScore + crystal1;
 	$('#total-score').html(totalScore);
-calculateTotal();
+    calculateTotal();
 });
 //FUNCTION decides win or loss
 //==================================================================
 function decideWinLoss() {
 if(randonNumber === totalScore){
 	$('#win').text(wins);
-	win++;
-	alert('win');
-	reset();
+	 win++;
+	  alert('win');
+	   reset();
 }
 else if (totalScore > randomNumber){
 	$('#loss').text(losses);
-	loss++;
-    alert('lose');
-    reset();
+	 loss++;
+      alert('lose');
+       reset();
   }
 }
 //FUNCTION resets the game
  function reset() {
    totalScore = 0;
    randomNumber = 0;
-   $('#score').html(totalScore);  
+   $('#total-score').html(totalScore);  
 }
 
 });
