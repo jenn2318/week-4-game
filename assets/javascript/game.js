@@ -26,6 +26,7 @@ var playerScore = 0
 $("#randomNumber").text(randomNumber);
 console.log(randomNumber);
 
+
 //Prints number to start the game
 // $("#random-number").text(randomNumber);
 // $("#win").text(wins);
@@ -60,29 +61,33 @@ gameStartReset();
 
 //Click action on jewels
 $("#crystal1").on('click', function() {
-    totalScore = playerScore + crystal1;
-    console.log("playerTotal= " + totalScore);
-    $("#totalScore").text(totalScore);
+    totalScore = totalScore + crystal1;
+    console.log("playerTotal=" + totalScore);
+    $("#totalScore").html(totalScore);
+    checkWinLoss();
 })   
 checkWinLoss();
-// $("#crystal2").on('click', function() {
-//     totalScore = playerScore + crystal1;
-//     console.log("playerTotal= " + totalScore);
-//     $("#totalScore").text(totalScore);
-//     checkWinLoss();
-// })
-// $("#crystal3").on('click', function() {
-//     totalScore = playerScore + crystal1;
-//     console.log("playerTotal= " + totalScore);
-//     $("#totalScore").text(totalScore);
-//     checkWinLoss();
-// })
-// $("#crystal4").on('click', function() {
-//     totalScore = playerScore + crystal1;
-//     console.log("playerTotal= " + totalScore);
-//     $("#totalScore").text(totalScore);
-//     checkWinLoss();
-// })
+$("#crystal2").on('click', function() {
+    totalScore = totalScore + crystal1;
+    console.log("playerTotal= " + totalScore);
+    $("#totalScore").html(totalScore);
+    checkWinLoss();
+})
+checkWinLoss();
+$("#crystal3").on('click', function() {
+    totalScore = totalScore + crystal1;
+    console.log("playerTotal= " + totalScore);
+    $("#totalScore").html(totalScore);
+    checkWinLoss();
+})
+checkWinLoss();
+$("#crystal4").on('click', function() {
+    totalScore = totalScore + crystal1;
+    console.log("playerTotal= " + totalScore);
+    $("#totalScore").html(totalScore);
+    checkWinLoss();
+})
+checkwinLoss();
 //==============================================================================
 //Check for Win or Loss
 function checkWinLoss() {
@@ -93,6 +98,8 @@ function checkWinLoss() {
          loserDisplay();
    }
  }
+ winnerDisplay();
+ loserDisplay();
 //Shows win and increments wins and resets the game after win
 function winnerDisplay() {
     console.log('You win!');
@@ -101,6 +108,7 @@ function winnerDisplay() {
     $(".crystal-buttons").empty();
     gameStartReset();
 }
+gameStartReset();
 //Shows loss and increments losses and resets the game after loss
 function loserDisplay() {
     console.log('You lose!');
@@ -109,6 +117,7 @@ function loserDisplay() {
     $(".crystal-buttons").empty();
     gameStartReset();
 }
+gameStartReset();
 function playGame(){
     totalScore = 0
     win = 0
