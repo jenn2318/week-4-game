@@ -24,33 +24,36 @@
  	<br><br>
  	The value of each crystal is hidden from you until you click on it.
  	<br><br>
- 	Each time when the game starts, the game will change the values of each crystal
+ 	Each time when the game starts, the game will change the values of each crystal</p>
  </div> 
 <div class="flex-container"> 
-   <div id="random-number">
-	 <p>#</p>
+   <div class="random-box"> <!-- id="random-number"> -->
+	 <p id="randomNumber"></p>
 </div>
+
 <div class="score-win-lose">
 	<h2>WIN:
 	  <span id="win">0</span></h2>
 	     <h2>Loss:
 	<span id="loss">0</span></h2>
 </div>
- <div class="total-score">
-    <h3>Your Total Score is:<span class="total-score"> 0 </span></h3>
+ <div id="total-score">
+    <h3>Your Total Score is:<span class="total-score"> " " </span></h3>
+    <h3>Player Score:</h3>
    </div>
 </div>
-<div id="crystal-buttons">
-	<div type="button" class="crystal1" value = '1'>
+<div class="crystal-buttons">
+  <div class="btn-group">
+	<button type="button" id="crystal1">
 		<img src="assets/images/clear-crystal.jpg">
-	</div>
-	<div type="button" class="crystal2" value = '2'>
+	</button>
+	<div type="button" id="crystal2">
 		<img src="assets/images/purple-crystal.jpg">
 	</div>
-	<div type="button" class="crystal3">
+	<div type="button" id="crystal3">
 		<img src="assets/images/green-crystal.jpg">
 	</div>
-	<div type="button" class="crystal4">
+	<div type="button" id="crystal4">
 		<img src="assets/images/pink-crystal.jpg">
 	</div>
 </div>

@@ -5,64 +5,145 @@
 //If it does not equal to the score the game starts over
 //If it equals, then the win counter will increment
 //VARIABLES
-$( document ).ready(function() {
+$(document).ready(function() {
 //===================================================================
-var randomNumber = 0
+//Global Variables
+//Generates random number at the start of the game
+var randomNumber = Math.floor(Math.random() * (119 - 20) + 19);
 var win = 0
-var lose = 0
+var loss = 0
 var totalScore = 0
 var counter = 0
-var crystal1 = 0
-var crystal2 = 0
-var crystal3 = 0
-var crystal4 = 0
-var score = 0
+//Generates random number for the crystals at the start of the game
+var crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
+var crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
+var crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
+var crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
+var randomNumberBetween1and12 = 0
+var randomNumberBetween19and120 = 0
+var playerScore = 0
+
+$("#randomNumber").text(randomNumber);
+console.log(randomNumber);
+
+//Prints number to start the game
+// $("#random-number").text(randomNumber);
+// $("#win").text(wins);
+// $("loss").text(losses);
+// $("#total-score").text(totalScore);
+//Lets you keep track of wins and losses
+// $('#win').text(wins);
+// $('#loss').text(losses);
+
 //FUNCTIONS
 //===================================================================
-//Calculates a random number for the game
-function getRandomNumber(){
-	randomNumberBetween19and120 = Math.floor(Math.random() * (119 - 20) + 19);
-	console.log(randomNumberBetween19and120);
-	$("#randomNumber").html(randomNumberBetween19and120);
-	getRandomNumber();
+function gameStartReset() {
+    randomNumber = Math.floor(Math.random() * (119 - 20) + 19);
+    console.log(randomNumber);
+    // $("#randomNumber").html(randomNumber);
+    crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
+    crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
+    crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
+    crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
+    console.log(crystal1);
+    console.log(crystal2);
+    console.log(crystal3);
+    console.log(crystal4);
+    totalScore = 0;
+    $('#totalScore').html(totalScore);
 }
-//Calculates random numbers for the crystals
-function getCrystalRandomNumber(){
-	crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
-	crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
-	crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
-	crystal4  = Math.floor(Math.random() * (12 - 1) + 1);
-    $("#crystalButtons").html(randomNumberBetween1and12);
-    getCrystalRandomNumber();
-};
-//Adds score to crystals/Test Below:
-//=================================================================
-$(".crystal1").on("click", function calculateTotal(){
-	totalScore = totalScore + crystal1;
-	$('#total-score').html(totalScore);
-    calculateTotal();
-});
-//FUNCTION decides win or loss
-//==================================================================
-function decideWinLoss() {
-if(randonNumber === totalScore){
-	$('#win').text(wins);
-	 win++;
-	  alert('win');
-	   reset();
+gameStartReset();
+
+// for(var i = 0; i < 4; i++){
+
+// }
+
+//Click action on jewels
+$("#crystal1").on('click', function() {
+    totalScore = playerScore + crystal1;
+    console.log("playerTotal= " + totalScore);
+    $("#totalScore").text(totalScore);
+    checkWinLoss();
+})   
+// $("#crystal2").on('click', function() {
+//     totalScore = playerScore + crystal1;
+//     console.log("playerTotal= " + totalScore);
+//     $("#totalScore").text(totalScore);
+//     checkWinLoss();
+// })
+// $("#crystal3").on('click', function() {
+//     totalScore = playerScore + crystal1;
+//     console.log("playerTotal= " + totalScore);
+//     $("#totalScore").text(totalScore);
+//     checkWinLoss();
+// })
+// $("#crystal4").on('click', function() {
+//     totalScore = playerScore + crystal1;
+//     console.log("playerTotal= " + totalScore);
+//     $("#totalScore").text(totalScore);
+//     checkWinLoss();
+// })
+//==============================================================================
+//Check for Win or Loss
+function checkWinLoss() {
+    if (totalScore == randomNumber) {
+      winnerDisplay();
+   }  else if 
+       (totalScore > randomNumber){
+         loserDisplay();
+   }
+ }
+//Shows win and increments wins and resets the game after win
+function winnerDisplay() {
+    console.log('You win!');
+    win++;
+    $('#win').text('You Win!');
+    $(".crystal-buttons").empty();
+    gameStartReset();
 }
-else if (totalScore > randomNumber){
-	$('#loss').text(losses);
-	 loss++;
-      alert('lose');
-       reset();
-  }
+//Shows loss and increments losses and resets the game after loss
+function loserDisplay() {
+    console.log('You lose!');
+    loss++;
+    $('#loss').text('You Lose!');
+    $(".crystal-buttons").empty();
+    gameStartReset();
 }
-//FUNCTION resets the game
- function reset() {
-   totalScore = 0;
-   randomNumber = 0;
-   $('#total-score').html(totalScore);  
+function playGame(){
+    totalScore = 0
+    win = 0
+    loss = 0
+    gameStartReset();
+    checkWinLoss();
+    winnerDisplay();
+    loserDisplay();
 }
+playgame();
 
 });
+
+//=====================================================================
+//Still deciding on if this will be needed as alternative ways for the game to work
+
+//To choose random numbers for the crystals at the start of the game after it resets
+// function newCrystalNumbers (){
+//     for(var i = 0; i < 4; i++);
+//     $("#crystal1").attr("data-random", [i]);
+//     console.log('crystal1');
+//     $("#crystal2").attr("data-random", [i]);
+//     console.log('crystal2');
+//     $("#crystal3").attr("data-random", [i]);
+//     $("#crystal4").attr("data-random", [i]);
+// }
+// newCrystalNumbers();
+
+
+//Adds score to crystals/Test Below:
+//=================================================================
+//  function calculateTotal(){
+// $(".crystal1").on("click", totalScore = totalScore + crystal1;
+// 	$('.total-score').value(totalScore);
+//     // calculateTotal();
+// });
+// calculateTotal();
+
