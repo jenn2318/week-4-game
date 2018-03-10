@@ -19,8 +19,8 @@ var crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
-var randomNumberBetween1and12 = 0
-var randomNumberBetween19and120 = 0
+var randomNumberBetween1and12 = 0 //created these if I needed them 
+var randomNumberBetween19and120 = 0 //created these if I needed them
 // var playerScore = 0
 
 $("#randomNumber").text(randomNumber);
@@ -36,13 +36,13 @@ console.log(randomNumber);
 //===================================================================
 function gameStartReset() {
     randomNumber = Math.floor(Math.random() * (119 - 20) + 19);
-    console.log(randomNumber);
+    console.log(randomNumber); //works in the console in generating a random number
     // $("#randomNumber").html(randomNumber);
     crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
     crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
     crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
     crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
-    console.log(crystal1);
+    console.log(crystal1); //works in the console in generating a random number
     console.log(crystal2);
     console.log(crystal3);
     console.log(crystal4);
