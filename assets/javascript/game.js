@@ -2,7 +2,7 @@
 //Each crystal will have a random number between 1 and 12
 //The number will be randomly generated every time the game is won or lost to those 4 crystals
 //When a crystal is chosen by a click the number is adding to the previous until it equals to the total score 
-//If it does not equal to the score the game starts over
+//If it does not equal to the random number the loss counter will increment 
 //If it equals, then the win counter will increment
 //VARIABLES
 $(document).ready(function() {
@@ -10,17 +10,17 @@ $(document).ready(function() {
 //Global Variables
 //Generates random number at the start of the game
 var randomNumber = Math.floor(Math.random() * (119 - 20) + 19);
-var win = 0
-var loss = 0
-var totalScore = 0
-var counter = 0
+var win = 0;
+var loss = 0;
+var totalScore = 0;
+var counter = 0;
 //Generates random number for the crystals at the start of the game
 var crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
-var randomNumberBetween1and12 = 0 //created these if I needed them 
-var randomNumberBetween19and120 = 0 //created these if I needed them
+var randomNumberBetween1and12 = 0; //created these if I needed them 
+var randomNumberBetween19and120 = 0; //created these if I needed them
 // var playerScore = 0
 
 $("#randomNumber").text(randomNumber);
@@ -47,7 +47,7 @@ function gameStartReset() {
     console.log(crystal3);
     console.log(crystal4);
     totalScore = 0;
-    $('#totalScore').html(totalScore);
+    $('.tScore').html(totalScore);
 }
 gameStartReset();
 
@@ -60,31 +60,31 @@ gameStartReset();
 $("#crystal1").on('click', function() {
     totalScore = totalScore + crystal1;
     console.log("totalScore=" + totalScore);
-    $("#totalScore").html(totalScore);
+    $(".tScore").text(totalScore);
     checkWinLoss();
 })   
 checkWinLoss();
 $("#crystal2").on('click', function() {
     totalScore = totalScore + crystal1;
     console.log("totalScore= " + totalScore);
-    $("#totalScore").html(totalScore);
+    $(".tScore").text(totalScore);
     checkWinLoss();
 })
 checkWinLoss();
 $("#crystal3").on('click', function() {
     totalScore = totalScore + crystal1;
     console.log("totalScore= " + totalScore);
-    $("#totalScore").html(totalScore);
+    $(".tScore").text(totalScore);
     checkWinLoss();
 })
 checkWinLoss();
 $("#crystal4").on('click', function() {
     totalScore = totalScore + crystal1;
     console.log("totalScore= " + totalScore);
-    $("#totalScore").html(totalScore);
+    $(".tScore").text(totalScore);
     checkWinLoss();
 })
-checkwinLoss();
+
 //==============================================================================
 //Check for Win or Loss
 function checkWinLoss() {
@@ -95,8 +95,8 @@ function checkWinLoss() {
          loserDisplay();
    }
  }
- winnerDisplay();
- loserDisplay();
+ // winnerDisplay();
+ // loserDisplay();
 //Shows win and increments wins and resets the game after win
 function winnerDisplay() {
     $('#win').text('You Win!');
@@ -105,7 +105,7 @@ function winnerDisplay() {
     $(".crystal-buttons").empty();
     gameStartReset();
 }
-gameStartReset();
+
 //Shows loss and increments losses and resets the game after loss
 function loserDisplay() {
     $('#loss').text('You Lose!');
@@ -114,17 +114,17 @@ function loserDisplay() {
     $(".crystal-buttons").empty();
     gameStartReset();
 }
-gameStartReset();
-function playGame(){
-    totalScore = 0
-    win = 0
-    loss = 0
-    gameStartReset();
-    checkWinLoss();
-    winnerDisplay();
-    loserDisplay();
-}
-playgame();
+
+// function playGame(){
+//     totalScore = 0
+//     win = 0
+//     loss = 0
+//     gameStartReset();
+//     checkWinLoss();
+//     winnerDisplay();
+//     loserDisplay();
+// }
+// playGame();
 
 });
 
