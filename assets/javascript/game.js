@@ -115,6 +115,7 @@ function loserDisplay() {
     gameStartReset();
 }
 
+//Not using this function decided this would not work best for the game
 // function playGame(){
 //     totalScore = 0
 //     win = 0
