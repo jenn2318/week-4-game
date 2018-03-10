@@ -21,20 +21,16 @@ var crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
 var crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
 var randomNumberBetween1and12 = 0
 var randomNumberBetween19and120 = 0
-var playerScore = 0
+// var playerScore = 0
 
 $("#randomNumber").text(randomNumber);
 console.log(randomNumber);
 
 
 //Prints number to start the game
-// $("#random-number").text(randomNumber);
 // $("#win").text(wins);
 // $("loss").text(losses);
 // $("#total-score").text(totalScore);
-//Lets you keep track of wins and losses
-// $('#win').text(wins);
-// $('#loss').text(losses);
 
 //FUNCTIONS
 //===================================================================
@@ -55,35 +51,36 @@ function gameStartReset() {
 }
 gameStartReset();
 
+//This for loop may not be needed, just placed this if needed
 // for(var i = 0; i < 4; i++){
 
 // }
 
-//Click action on jewels
+//Click action/event on jewels
 $("#crystal1").on('click', function() {
     totalScore = totalScore + crystal1;
-    console.log("playerTotal=" + totalScore);
+    console.log("totalScore=" + totalScore);
     $("#totalScore").html(totalScore);
     checkWinLoss();
 })   
 checkWinLoss();
 $("#crystal2").on('click', function() {
     totalScore = totalScore + crystal1;
-    console.log("playerTotal= " + totalScore);
+    console.log("totalScore= " + totalScore);
     $("#totalScore").html(totalScore);
     checkWinLoss();
 })
 checkWinLoss();
 $("#crystal3").on('click', function() {
     totalScore = totalScore + crystal1;
-    console.log("playerTotal= " + totalScore);
+    console.log("totalScore= " + totalScore);
     $("#totalScore").html(totalScore);
     checkWinLoss();
 })
 checkWinLoss();
 $("#crystal4").on('click', function() {
     totalScore = totalScore + crystal1;
-    console.log("playerTotal= " + totalScore);
+    console.log("totalScore= " + totalScore);
     $("#totalScore").html(totalScore);
     checkWinLoss();
 })
@@ -94,7 +91,7 @@ function checkWinLoss() {
     if (totalScore == randomNumber) {
       winnerDisplay();
    }  else if 
-       (totalScore > randomNumber){
+       (totalScore >= randomNumber){
          loserDisplay();
    }
  }
@@ -102,18 +99,18 @@ function checkWinLoss() {
  loserDisplay();
 //Shows win and increments wins and resets the game after win
 function winnerDisplay() {
-    console.log('You win!');
-    win++;
     $('#win').text('You Win!');
+    console.log('You win!');
+     win++;
     $(".crystal-buttons").empty();
     gameStartReset();
 }
 gameStartReset();
 //Shows loss and increments losses and resets the game after loss
 function loserDisplay() {
-    console.log('You lose!');
-    loss++;
     $('#loss').text('You Lose!');
+     console.log('You lose!');
+    loss++;
     $(".crystal-buttons").empty();
     gameStartReset();
 }
@@ -145,14 +142,4 @@ playgame();
 //     $("#crystal4").attr("data-random", [i]);
 // }
 // newCrystalNumbers();
-
-
-//Adds score to crystals/Test Below:
-//=================================================================
-//  function calculateTotal(){
-// $(".crystal1").on("click", totalScore = totalScore + crystal1;
-// 	$('.total-score').value(totalScore);
-//     // calculateTotal();
-// });
-// calculateTotal();
 
