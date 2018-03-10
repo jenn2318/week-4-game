@@ -24,7 +24,7 @@ body{
 	flex-direction: row;
 }
 
-#total-score{
+#totalScore{
 	background-color: #4aaaa5;
 	border: 3px solid;
 	text-align: left;
