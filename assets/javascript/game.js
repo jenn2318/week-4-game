@@ -63,8 +63,8 @@ $("#crystal1").on('click', function() {
     totalScore = playerScore + crystal1;
     console.log("playerTotal= " + totalScore);
     $("#totalScore").text(totalScore);
-    checkWinLoss();
 })   
+checkWinLoss();
 // $("#crystal2").on('click', function() {
 //     totalScore = playerScore + crystal1;
 //     console.log("playerTotal= " + totalScore);
